@@ -23,10 +23,10 @@ const HeroSection = () => {
               Expert Editorial Preparation
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.1] tracking-[-0.03em] mb-6 max-w-2xl text-balance text-white">
-              Prepare, Submit, and Publish Your Research with Expert Editorial Support
+              Get Your Manuscript Accepted Faster Without Rejection and Less Review Time
             </h1>
             <p className="text-lg text-blue-100/80 max-w-xl mb-10">
-              Behind every accepted paper is a process most researchers struggle to navigate. We make that process clear, strategic, and successful from the first draft to the final decision.
+              Stop wasting time on rejections. We refine your manuscript, fix critical issues, and position your work for faster acceptance by top journals.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
