@@ -37,9 +37,25 @@ const EvaluationSection = () => {
   const ref = useReveal();
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      await fetch("https://formspree.io/f/mkopwbaa", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      setSubmitted(true);
+    } catch (error) {
+      alert("Something went wrong. Please try again.");
+    }
   };
 
   return (
@@ -57,37 +73,78 @@ const EvaluationSection = () => {
           {submitted ? (
             <div className="text-center py-8">
               <h3 className="text-xl font-bold mb-3">Thank You!</h3>
-              <p className="text-muted-foreground">Your manuscript will be reviewed by experienced editors within 12–24 hours.</p>
+              <p className="text-muted-foreground">
+                Your manuscript has been received. Our editors will contact you within 12–24 hours.
+              </p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+              {/* Hidden subject */}
+              <input type="hidden" name="_subject" value="New Manuscript Submission" />
+
+              {/* Name */}
               <div className="flex flex-col gap-2">
                 <label className="text-sm font-semibold">Full Name</label>
-                <input type="text" placeholder="Dr. Jane Doe" className="px-3 py-3 border border-border rounded-md text-sm bg-background" required />
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Dr. Jane Doe"
+                  className="px-3 py-3 border border-border rounded-md text-sm bg-background"
+                  required
+                />
               </div>
+
+              {/* Email */}
               <div className="flex flex-col gap-2">
                 <label className="text-sm font-semibold">Email Address</label>
-                <input type="email" placeholder="jane.doe@university.edu" className="px-3 py-3 border border-border rounded-md text-sm bg-background" required />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="jane.doe@university.edu"
+                  className="px-3 py-3 border border-border rounded-md text-sm bg-background"
+                  required
+                />
               </div>
+
+              {/* Research Field */}
               <div className="flex flex-col gap-2 md:col-span-2">
                 <label className="text-sm font-semibold">Research Field / Discipline</label>
-                <select className="px-3 py-3 border border-border rounded-md text-sm bg-background text-foreground" required defaultValue="">
+                <select
+                  name="research_field"
+                  className="px-3 py-3 border border-border rounded-md text-sm bg-background text-foreground"
+                  required
+                  defaultValue=""
+                >
                   <option value="" disabled>Select your research field</option>
                   {researchFields.map((field) => (
                     <option key={field} value={field}>{field}</option>
                   ))}
                 </select>
               </div>
+
+              {/* Manuscript Link (replaces file upload) */}
               <div className="flex flex-col gap-2 md:col-span-2">
-                <label className="text-sm font-semibold">Upload Manuscript</label>
-                <input type="file" className="px-3 py-3 border border-border rounded-md text-sm bg-background" />
-                <p className="text-xs text-muted-foreground">Accepted formats: DOC, DOCX, PDF | Max size: 50MB</p>
+                <label className="text-sm font-semibold">Manuscript Link</label>
+                <input
+                  type="text"
+                  name="manuscript_link"
+                  placeholder="Paste Google Drive link to your manuscript"
+                  className="px-3 py-3 border border-border rounded-md text-sm bg-background"
+                  required
+                />
+                <p className="text-xs text-muted-foreground">
+                  Upload your file to Google Drive and paste the shareable link here.
+                </p>
               </div>
+
+              {/* Submit */}
               <div className="md:col-span-2">
                 <Button variant="hero" size="lg" type="submit" className="w-full">
                   Request Free Expert Review
                 </Button>
               </div>
+
             </form>
           )}
 
