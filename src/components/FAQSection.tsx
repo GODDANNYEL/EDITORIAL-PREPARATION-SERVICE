@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useReveal } from "@/hooks/useReveal";
 
 const faqs = [
-  { q: "Do you guarantee publication?", a: "No. We do not guarantee publication, as final decisions are made by journal editors and peer reviewers. However, we significantly improve your manuscript's quality, structure, and compliance with journal requirements — helping reduce the risk of rejection by 60–90%." },
+  { q: "Do you guarantee publication?", a: "No. We do not guarantee publication, as final decisions are made by journal editors and peer reviewers. However, we significantly improve your manuscript's quality, structure, and compliance with journal requirements helping reduce the risk of rejection by 60–90%." },
   { q: "Do you accept Co-authorship?", a: "Yes. We accept Co-authorship in all fields of study." },
   { q: "How long does manuscript preparation take?", a: "Turnaround time depends on the length and complexity of your manuscript. Most evaluations are completed within 12–24 hours, while full editorial preparation typically takes a few days. You will receive a clear timeline after initial review." },
   { q: "Do you support all academic disciplines?", a: "Yes. We support a wide range of academic fields, including sciences, engineering, social sciences, and humanities. Our editorial approach is tailored to meet discipline-specific journal standards." },

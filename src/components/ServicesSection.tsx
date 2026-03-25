@@ -6,7 +6,7 @@ const services = [
     icon: FileText,
     title: "Journal Formatting",
     subtitle: "Aligned with Your Target Journal",
-    desc: "We format your manuscript to match exact journal guidelines — reducing the risk of immediate desk rejection.",
+    desc: "We format your manuscript to match exact journal guidelines reducing the risk of immediate desk rejection.",
     includes: [
       "Layout & heading structure",
       "Figure & table formatting",

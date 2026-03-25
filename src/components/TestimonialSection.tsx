@@ -4,17 +4,17 @@ import { User } from "lucide-react";
 const testimonials = [
   {
     headline: "My manuscript was accepted with only minor revisions!",
-    quote: "After incorporating the editorial improvements, my manuscript was accepted with only minor revisions. The structure and formatting were clearly in line with the journal's expectations, which made a significant difference.",
-    author: "Dr. A. Rahman",
+    quote: "After including the editorial improvements, my manuscript was accepted with only minor revisions. The structure and formatting were clearly in line with the journal's expectations, which made a significant difference.",
+    author: "Dr. Spencer E.T. Hahn",
     role: "Professor",
     service: "Journal Formatting",
   },
   {
-    headline: "The submission process was significantly smoother",
-    quote: "What stood out was their attention to detail. Every section of my manuscript — from references to structure — was carefully reviewed. It made the submission process significantly smoother.",
-    author: "Dr. L. Chen",
-    role: "Associate Professor",
-    service: "Manuscript Structure Optimization",
+    headline: "Accepted Faster Than I Expected",
+    quote: "After multiple rejections, EPS experts refined my manuscript's clarity, and academic tone. They resubmitted to a Q2 journal and it was accepted with only minor revisions. Reviewers even praised the presentation. This was my fastest acceptance yet.",
+    author: "Fahod Savahrov",
+    role: "PhD Researcher",
+    service: "Journal Formatting and Submission",
   },
   {
     headline: "I finally got past the editorial screening stage",

@@ -28,7 +28,7 @@ const TrustSection = () => {
         </div>
 
         <p className="mt-12 text-muted-foreground italic">
-          Supporting Researchers, Institutions, and independent scholars worldwide.
+          From first draft to final decision. We improve every stage of the submission process.
         </p>
       </div>
     </section>
